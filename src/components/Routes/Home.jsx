@@ -1,5 +1,6 @@
-import { Box,  Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay,   Text } from '@chakra-ui/react';
+import { Box,  Button,  Heading,  Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay,   Text } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
+import {ArrowForwardIcon} from '@chakra-ui/icons'
 
 
 
@@ -76,6 +77,36 @@ function Home(){
             image :'https://cdna.lystit.com/cms/LYST_600x600_CTA_5_1_18f34c2397.jpg'
         },
     ]
+    const breakOutBrands = [
+        {
+            name: 'PATOU',
+            image : 'https://cdna.lystit.com/cms/My_Post_81_76121ffa01.jpg'
+        },
+        {
+            name: 'GUCCI',
+            image : 'https://cdna.lystit.com/cms/designer_rail_gucci_eca9e74796.jpg'
+        },
+        {
+            name: 'SAINT LAURENT',
+            image : 'https://cdna.lystit.com/cms/designer_rail_saint_laurent_2031eb80f7.jpeg'
+        },
+        {
+            name: 'OFF-WHITE C/O VIRGIL ABLOH',
+            image : 'https://cdna.lystit.com/cms/designer_rail_off_white_co_virgil_abloh_d8c6b37a9f.jpeg'
+        },
+        {
+            name: 'BALENCIAGA',
+            image : 'https://cdna.lystit.com/cms/designer_rail_balenciaga_215cbc0fe0.jpeg'
+        },
+        {
+            name: 'NIKE',
+            image : 'https://cdna.lystit.com/cms/designer_rail_nike_c3045162ba.png'
+        },
+        {
+            name: 'DOLCE & GABBANA',
+            image : 'https://cdna.lystit.com/cms/designer_rail_dolce_gabbana_bcb7049bb0.jpeg'
+        },
+    ]
 
     const scrollbar ={
         '&::-webkit-scrollbar':{display:'none'},
@@ -87,7 +118,7 @@ function Home(){
     return(
         <Box>
             
-            <Box as='button' onClick={onOpen} >
+            <Box as='button' onClick={onOpen} borderBottom='1px' mb='50px'>
                 <Image src ='https://cdna.lystit.com/cms/ENG_header_XL_9f9e2af236_615828663f.jpg' />
             </Box>
             <Modal isOpen={isOpen} onClose ={onClose}>
@@ -108,7 +139,7 @@ function Home(){
                 </ModalContent>
             </Modal>
 
-            <Box  overflowX='scroll'  display='flex' minH='300px'css ={scrollbar}>
+            <Box  overflowX='auto'  display='flex' minH='300px'css ={scrollbar}>
                 {firstRow.map((ele)=>(
                         <Box display='flex' border='1px'>
                             <Box minW='100px' minH='300px' maxH='300px' display='flex' alignItems='start' justifyContent='start' transform='scale(-1,-1)' >
@@ -123,7 +154,7 @@ function Home(){
                     ))}
             </Box> 
             
-            <Box mb='3rem' overflowX='scroll'  display='flex' minH='300px'css ={scrollbar}>
+            <Box mb='100px' overflowX='scroll'  display='flex' minH='300px'css ={scrollbar}>
                 {secondRow.map((ele)=>(
                         <Box display='flex' border='1px'>
                             <Box minW='100px' minH='300px' maxH='300px' display='flex' alignItems='start' justifyContent='start' transform='scale(-1,-1)' >
@@ -136,7 +167,81 @@ function Home(){
                         </Box>
 
                     ))}
-            </Box> 
+            </Box>
+            
+            <Box overflow='scroll' display='flex' minH='365px' css={scrollbar}>
+                <Box minW='436px' maxH='365px' border='1px' display='flex' justifyContent='center' alignItems='center' bg='#F5F4F2'>
+                    <Box>
+                        <Text fontSize='70px'>BREAKOUT</Text>
+                        <Text mt='-30px' fontSize='70px'>BRANDS</Text>
+                    </Box>    
+                </Box>
+                <Box display='flex'>
+                    {firstRow.map((ele) => (
+                        <Box minW='436px' maxH='365px' border='1px' pos='relative'>
+                            <Text as ='h1' fontSize='1.5rem' pos='absolute' top='1rem' left='1rem'>{ele.name}</Text>
+                            <Image src={ele.image} w ='363px' h='262px' pos='absolute' bottom='0px' right='0px' />
+                        </Box>
+                    ))}
+                </Box>
+
+            </Box>
+            <Box overflow='scroll' display='flex' minH='365px' css={scrollbar} mb='50px'>
+                <Box minW='436px' maxH='365px' border='1px' display='flex' justifyContent='center' alignItems='center' bg='#F5F4F2'>
+                    <Box>
+                        <Text fontSize='70px'>TRENDING</Text>
+                        <Text mt='-30px' fontSize='70px'>NOW</Text>
+                    </Box>    
+                </Box>
+                <Box display='flex'>
+                    {breakOutBrands.map((ele) => (
+                        <Box minW='436px' maxH='365px' border='1px' pos='relative'>
+                            <Text as ='h1' fontSize='1.5rem' pos='absolute' top='1rem' left='1rem'>{ele.name}</Text>
+                            <Image src={ele.image} w ='363px' h='262px' pos='absolute' bottom='0px' right='0px' />
+                        </Box>
+                    ))}
+                </Box>
+
+            </Box>
+
+            <Box border='1px' display='flex' flexDirection={['column','column','row']} mb='40px'>
+                <Box display='flex' minH={['500px','500px','570px']} w={['100%','100%','65%']} alignItems='center' justifyContent='right' bg='#F5F4F2'>
+                   
+                    <Box bg='#F5F4F2' w='30%' minH='75%' maxH='75%' p='20px'>
+                        <Heading as='h1' textAlign='left' fontSize='110px'>1</Heading>
+                        <Text fontSize='4xl' lineHeight='2rem' textAlign='left'>The Biggest Collection</Text>
+                        <br />
+                        <Text textAlign='left'>Shop over 12,000 brands and stores in one place.</Text>
+                        <br />
+                        <Text textAlign='left'>Find exactly what you want with powerful search and personal recommendations.</Text>
+                    </Box>
+                    <Box bg='#F5F4F2' w='30%' minH='75%' maxH='75%' p='20px'>
+                        <Heading as='h1' textAlign='left' fontSize='110px'>2</Heading>
+                        <Text fontSize='4xl' lineHeight='2rem' textAlign='left'>THE HOTTEST PRODUCTS</Text>
+                        <br />
+                        <Text textAlign='left'>Shop over 12,000 brands and stores in one place.</Text>
+                        <br />
+                        <Text textAlign='left'>Find exactly what you want with powerful search and personal recommendations.</Text>
+                    </Box>
+                    <Box bg='#F5F4F2' w='30%' minH='75%' maxH='75%' p='20px'>
+                        <Heading as='h1' textAlign='left' fontSize='110px'>3</Heading>
+                        <Text fontSize='4xl' lineHeight='2rem' textAlign='left'>THE BEST PRICES</Text>
+                        <br />
+                        <Text textAlign='left'>Shop over 12,000 brands and stores in one place.</Text>
+                        <br />
+                        <Text textAlign='left'>Find exactly what you want with powerful search and personal recommendations.</Text>
+                    </Box>
+                    
+
+                </Box>
+                <Box borderLeft='1px' minH={['300px','300px','570px']} w={['100%','100%','35%']} bg='#CAFC4F' p='2rem' display='flex' alignItems='center'>
+                    <Box maxW={['80%','80%','300px']} display='flex' flexDirection='column' >
+                        <Heading fontWeight='500' textAlign='left' fontSize='45px'>SIGN UP FOR SMATTER SHOPPING</Heading>
+                        
+                        <Button w='126px' h='40px' mt='1rem' rightIcon={<ArrowForwardIcon />} color='white' bg='black'>Join</Button>
+                    </Box>
+                </Box>
+            </Box>
         </Box>
     )
 }
