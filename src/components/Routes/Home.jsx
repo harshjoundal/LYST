@@ -1,4 +1,4 @@
-import { Box,  Button,  Heading,  Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay,   Text } from '@chakra-ui/react';
+import { Box,  Button,  Grid,  Heading,  Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay,   Text } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
 import {ArrowForwardIcon} from '@chakra-ui/icons'
 
@@ -204,7 +204,7 @@ function Home(){
 
             </Box>
 
-            <Box border='1px' display='flex' flexDirection={['column','column','row']} mb='40px'>
+            <Box border='1px' display='flex' flexDirection={['column','column','row']} >
                 <Box display='flex' minH={['500px','500px','570px']} w={['100%','100%','65%']} alignItems='center' justifyContent='right' bg='#F5F4F2'>
                    
                     <Box bg='#F5F4F2' w='30%' minH='75%' maxH='75%' p='20px'>
@@ -242,6 +242,37 @@ function Home(){
                     </Box>
                 </Box>
             </Box>
+
+            <Box minH='325px' bg='#FFFFFF' borderBottom='1px' display='flex' gap='20px'>
+                <Box w='60px' h='325px'  display='flex'>
+                    <Text fontSize='32px' sx={{writingMode:'vertical-lr'}} transform='scale(-1,-1)'>MOST WANTED</Text>
+                </Box>
+
+                <Grid
+                    h='325px'
+                    templateRows='repeat(2,85px)'
+                    templateColumns='repeat(5,170px)'
+                    gap='50px'
+                    textAlign='left'
+                    fontSize='22px'
+                    lineHeight='22px'
+                    fontWeight='500'
+                    alignContent='center'
+                    
+                >
+                    <Box _hover={{color:'blue',cursor:'pointer'}}><Text>BOW-BACK DRESSES</Text></Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>NIKE AIR FORCE 1 SNEAKERS</Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>TIGER EYE NECKLACES</Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>COACH QUILTED BAGS</Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>PLATFORM SNEAKERS</Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>SEERSUCKER JACKETS</Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>NIKE DUNK LOW SNEAKERS</Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>ADIDAS FORUM SNEAKERS</Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>FLORAL TILES</Box>
+                    <Box _hover={{color:'blue',cursor:'pointer'}}>GUCCI DONALD DUCK COLLECTION</Box>
+                </Grid>
+            </Box>
+
         </Box>
     )
 }
