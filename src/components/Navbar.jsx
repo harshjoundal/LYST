@@ -27,8 +27,8 @@ function Navbar(){
                             color: "teal.500",
                             cursor:'pointer'
                         }}>LYST</Heading>
-                        <Text>Men</Text>
-                        <Text>Women</Text>
+                        <Link to='/men'><Text _hover={{textDecoration:'underline',cursor:'pointer'}}>MEN</Text></Link>
+                        <Link to='/women'><Text _hover={{textDecoration:'underline',cursor:'pointer'}}>WOMEN</Text></Link>
                         <InputGroup>
                             <InputLeftElement
                             pointerEvents='none'
